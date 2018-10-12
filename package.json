@@ -1,25 +1,25 @@
-
 {
-  "name": "neighborhood_map_react",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "gwg_neighborhood_map",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kayeZhie/Neighborhood_Map_React.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kayeZhie/Neighborhood_Map_React/issues"
-  },
-  "homepage": "https://github.com/kayeZhie/Neighborhood_Map_React#readme"
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
-
-"scripts": {
-    "start": "node your-script.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
