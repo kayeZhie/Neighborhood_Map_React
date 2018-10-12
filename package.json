@@ -1,0 +1,25 @@
+
+{
+  "name": "neighborhood_map_react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kayeZhie/Neighborhood_Map_React.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kayeZhie/Neighborhood_Map_React/issues"
+  },
+  "homepage": "https://github.com/kayeZhie/Neighborhood_Map_React#readme"
+}
+
+"scripts": {
+    "start": "node your-script.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
