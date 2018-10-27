@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Isla Restaurant",
+    "street": "448 San Mateo Ave",
+    "city": "San Bruno",
+    "state": "CA",
+    "zip": "94066",
+    "url": "http://www.myislarestaurant.com/",
+    "pos": {"lat":37.6229391,"lng":-122.4109552}
+  },
+  {
+    "name": "Fort Mckinley",
+    "street": "101 Brentwood Dr",
+    "city": "South San Francisco",
+    "state": "CA",
+    "zip": "940080",
+    "url": "http://www.thefortsf.com/",
+    "pos": {"lat":37.6414467,"lng":-122.4251755}
+  },
+   {
+    "name": "Tastebuds Restaurant",
+    "street": "82 San Bruno Ave W",
+    "city": "San Bruno",
+    "state": "CA",
+    "zip": "94066",
+    "url": "http://tastebudscuisine.com/",
+    "pos": {"lat":37.6293693,"lng":-122.4158654}
+  },
+   {
+    "name": "Patio Filipino Restaurant",
+    "street": "1770 El Camino Real",
+    "city": "San Bruno",
+    "state": "CA",
+    "zip": "94066",
+    "url": "https://www.patiofilipino.com/",
+    "pos": {"lat":37.6148924,"lng":-122.4054993}
+  },
+   {
+    "name": "Ongpin Restaurant",
+    "street": "73 Camaritas Ave",
+    "city": "outh San Francisco",
+    "state": "CA",
+    "zip": "94080",
+    "url": "http://www.ongpin.com/",
+    "pos": {"lat":37.6545081,"lng":-122.4371263}
+  },
+   {
+    "name": "Ichiban Filipino Cuisine",
+    "street": "120 Hazelwood Dr",
+    "city": "South San Francisco",
+    "state": "CA",
+    "zip": "94080",
+    "url": "http://www.myislarestaurant.com/",
+    "pos": {"lat":37.6423314,"lng":-122.4261748}
+  },
+   {
+    "name": "Kuya's Asian Cuisine",
+    "street": " 448 San Mateo Ave",
+    "city": "San Bruno",
+    "state": "CA",
+    "zip": "94066",
+    "url": "http://www.myislarestaurant.com/",
+    "pos": {"lat":37.6232955,"lng":-122.4109479}
+  },
+]
