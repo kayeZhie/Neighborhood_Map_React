@@ -9,7 +9,7 @@ class PresentMap extends Component {
         markers: [],
         //wether or not the infoWindwo is showing
         showingInfoWindow: false
-    };
+    }
 
     componentDidMount = () => {
     }

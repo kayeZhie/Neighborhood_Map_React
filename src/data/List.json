@@ -1,38 +1,32 @@
 [
   {
-    "name": "Toppings Restaurant",
-    "url": "https://www.allmenus.com/ca/south-san-francisco/55977-toppings-restaurant/menu/",
-    "pos": {"lat":37.6495267,"lng":-122.4531841}
+    "name": "Lucky",
+    "type": "Supermarket",
+    "latitude": 37.5964053,
+    "longitude": -122.3875532
   },
   {
-    "name": "Fort Mckinley",
-    "url": "http://www.thefortsf.com/",
-    "pos": {"lat":37.6414467,"lng":-122.4251755}
+    "name": "Safeway",
+    "type": "Supermarket",
+    "latitude": 37.6033693,
+    "longitude": -122.3942131
   },
-   {
-    "name": "Tastebuds Restaurant",
-    "url": "http://tastebudscuisine.com/",
-    "pos": {"lat":37.6293693,"lng":-122.4158654}
+  {
+    "name": "Lunardi's Markets",
+    "type": "Supermarket",
+    "latitude": 37.5945203,
+    "longitude": -122.3849809
   },
-   {
-    "name": "Patio Filipino Restaurant",
-    "url": "https://www.patiofilipino.com/",
-    "pos": {"lat":37.6148924,"lng":-122.4054993}
+  {
+    "name": "Trader Joe's",
+    "type": "Supermarket",
+    "latitude": 37.6036625,
+    "longitude": -122.396037
   },
-   {
-    "name": "Ongpin Restaurant",
-    "url": "http://www.ongpin.com/",
-    "pos": {"lat":37.6545081,"lng":-122.4371263}
-  },
-   {
-    "name": "Goldilocks Cuisine",
-    "url": "http://www.goldilocks-usa.com/stores/us-callanssfca.htm",
-    "pos": {"lat":37.6453557,"lng":-122.4518967}
-  },
-   {
-    "name": "Kuya's Asian Cuisine",
-    "url": "http://dineries.com/ca/sanbruno/kuyasasiancusine/460sanmateoave",
-    "pos": {"lat":37.6232955,"lng":-122.4109479}
+  {
+    "name": "Dean's Produce",
+    "type": "Supermarket",
+    "latitude": 37.6020093,
+    "longitude": -122.3934996
   }
 ]
-
