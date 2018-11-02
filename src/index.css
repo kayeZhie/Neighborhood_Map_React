@@ -2,13 +2,23 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  height: 100vh;
 }
+h1 {
+  text-align: center;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+    background-color: lightpink;
+    font: italic bold 20px/30px Georgia, serif;
 
+}
 .search {
   z-index: 1;
   position: fixed;
   top: 5px;
   left: 5px;
+
 }
 
 .search-field {
@@ -19,6 +29,8 @@ body {
 .search-area {
   font-size: 1.1em;
   float: right;
+  margin-top: 30px;
+
 }
 
 .location-list {
@@ -100,5 +112,4 @@ body {
 
 .header {
   color: red;
-  float: top;
 }			
