@@ -1,121 +1,81 @@
-import React, {Component} from 'react';
-import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
+import React, { Component } from "react";
+import Place from "./Place";
 
-class PresentMap extends Component {
-    state = {
-        //map display
-        map: null,
-        //list of all the markers
-        markers: [],
-        //wether or not the infoWindwo is showing
-        showingInfoWindow: false
-    }
+class LocationList extends Component {
+  /**
+   * Constructor
+   */
+  constructor(props) {
+    super(props);
+    this.state = {
+      locations: "",
+      query: "",
+      suggestions: true
+    };
 
-    componentDidMount = () => {
-    }
+    this.filterLocations = this.filterLocations.bind(this);
+  }
 
-    mapReady = (props, map) => {
-        // Save the map reference in state and prepare the location markers
-        this.setState({map});
-        //passing all the location marker to the map
-        this.updateMarkers(this.props.locations);
-    }
+  /**
+   * Filter Locations based on user query
+   */
+  filterLocations(event) {
+    this.props.closeInfoWindow();
+    const { value } = event.target;
+    var locations = [];
+    this.props.alllocations.forEach(function(location) {
+      if (location.longname.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+        location.marker.setVisible(true);
+        locations.push(location);
+      } else {
+        location.marker.setVisible(false);
+      }
+    });
 
-    closeInfoWindow = () => {
-        // Disable any active marker animation
-        this.state.activeMarker && this
-            .state
-            .activeMarker
-            .setAnimation(null);
-        this.setState({showingInfoWindow: false, activeMarker: null, activeMarkerProps: null});
-    }
+    this.setState({
+      locations: locations,
+      query: value
+    });
+  }
 
-    onMarkerClick = (props, marker, e) => {
-        // Close any info window already open
-        this.closeInfoWindow();
+  componentWillMount() {
+    this.setState({
+      locations: this.props.alllocations
+    });
+  }
 
-        // Set the state to have the marker info show
-        this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps: props});
-    }
+  /**
+   * Render function of LocationList
+   */
+  render() {
+    var locationlist = this.state.locations.map(function(listItem, index) {
+      return (
+        <Place
+          key={index}
+          openInfoWindow={this.props.openInfoWindow.bind(this)}
+          data={listItem}
+        />
+      );
+    }, this);
 
-    updateMarkers = (locations) => {
-        // checking all the locations has a valid value or not then it will cause an error
-        if (!locations) 
-            return;
-        
-        // remove existing markes from the map
-        this
-            .state
-            .markers
-            .forEach(marker => marker.setMap(null));
-
-        // iterate the markers, pass the value of the location and url
-        let markerProps = [];
-        let markers = locations.map((location, index) => {
-            let tempProps = {
-                key: index,
-                index,
-                name: location.name,
-                position: location.pos,
-                url: location.url
-            };
-            markerProps.push(tempProps);
-
-            let animation = this.props.google.maps.Animation.DROP;
-            let marker = new this.props.google.maps.Marker({
-                position: location.pos, 
-                map: this.state.map, 
-                animation
-            });
-            marker.addListener('click', () => {
-                this.onMarkerClick(tempProps, marker, null);
-            });
-            return marker;
-        })
-
-        this.setState({markers, markerProps});
-    }
-
-    render = () => {
-        const style = {
-            width: '100%',
-            height: '100%'
-        }
-        const center = {
-            lat: this.props.lat,
-            lng: this.props.lon
-        }
-        let tempProps = this.state.activeMarkerProps;
-
-        return (
-            <Map
-                role="application"
-                aria-label="map"
-                onReady={this.mapReady}
-                google={this.props.google}
-                zoom={this.props.zoom}
-                style={style}
-                initialCenter={center}
-                onClick={this.closeInfoWindow}>
-                <InfoWindow
-                    marker={this.state.activeMarker}
-                    visible={this.state.showingInfoWindow}
-                    onClose={this.closeInfoWindow}>
-                    <div>
-                        <h3>{tempProps && tempProps.name}</h3>
-                        {tempProps && tempProps.url
-                            ? (
-                                <a href={tempProps.url}>See website</a>
-                            )
-                            : ""}
-                        
-                    </div>
-                </InfoWindow>
-            </Map>
-        )
-    }
+    return (
+      <div className="search-area">
+        <input
+          role="search"
+          aria-labelledby="filter"
+          id="search-field"
+          className="search-input"
+          type="text"
+          placeholder="Filter"
+          value={this.state.query}
+          onChange={this.filterLocations}
+        />
+        <ul className="location-list">
+          {this.state.suggestions && locationlist}
+        </ul>
+      </div>
+    );
+  }
 }
 
-export default GoogleApiWrapper({
-    apiKey: ("AIzaSyBfILJE96LCdRo_Pkb-IFQQXBaU_zYBdio")
-})(PresentMap)
+export default LocationList;
