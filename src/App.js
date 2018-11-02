@@ -11,15 +11,13 @@ class App extends Component {
       prevmarker: ""
     };
 
-    // retain object instance when used in the function
     this.initMap = this.initMap.bind(this);
     this.openInfoWindow = this.openInfoWindow.bind(this);
     this.closeInfoWindow = this.closeInfoWindow.bind(this);
   }
 
   componentDidMount() {
-    // Connect the initMap() function within this class to the global window context,
-    // so Google Maps can invoke it
+    // invoking Google Map
     window.initMap = this.initMap;
     // Asynchronously load the Google Maps script, passing in the callback reference
     loadMapJS(
@@ -31,14 +29,13 @@ class App extends Component {
   //Initialise the map 
   initMap() {
     var self = this;
-
     var mapview = document.getElementById("map");
     mapview.style.height = window.innerHeight + "px";
     var map = new window.google.maps.Map(mapview, {
       center: { lat: 37.598546, lng: -122.3871942 },
       zoom: 14,
       mapTypeControl: false,
-      
+
       //styles from https://snazzymaps.com/style/31/red-hues
       styles: [
     {
@@ -95,14 +92,17 @@ class App extends Component {
 
     var alllocations = [];
     this.state.alllocations.forEach(function(location) {
+      var icon = {url: 'https://png.icons8.com/color/50/000000/place-marker.png'};
       var longname = location.name + " " + location.type;
-      var marker = new window.google.maps.Marker({
+      var marker = new window.google.maps.Marker({ 
         position: new window.google.maps.LatLng(
           location.latitude,
           location.longitude
         ),
         animation: window.google.maps.Animation.DROP,
-        map: map
+        map: map,
+        icon: icon
+
       });
 
       marker.addListener("click", function() {
@@ -130,7 +130,7 @@ class App extends Component {
     this.setState({
       prevmarker: marker
     });
-    this.state.infowindow.setContent("Loading Data...");
+    this.state.infowindow.setContent();
     this.state.map.setCenter(marker.getPosition());
     this.state.map.panBy(0, -200);
     this.getMarkerInfo(marker);
@@ -146,7 +146,7 @@ class App extends Component {
     var clientId = "52WWWVIBTJFWH34X3CEPOFOO5420AZWISHUPMSDQIITR5Y3B";
     var clientSecret = "BHSSTVQJDWVVIIWMN3BMAOLZ0SSBMILOFPG1RCBAVVJUKFDK";
 
-    // Build the api endpoint
+    // API Information
     var url =
       "https://api.foursquare.com/v2/venues/search?client_id=" +
       clientId +
@@ -164,7 +164,7 @@ class App extends Component {
           return;
         }
 
-        // Get the text in the response
+        // Get info in the response
         response.json().then(function(data) {
           console.log(data);
 
@@ -204,9 +204,7 @@ class App extends Component {
     this.state.infowindow.close();
   }
 
-  /**
-   * Render for react
-   */
+   // Render for react
   render() {
     return (
       <div>

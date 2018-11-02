@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import Place from "./Place";
 
 class LocationList extends Component {
-  /**
-   * Constructor
-   */
   constructor(props) {
     super(props);
     this.state = {
@@ -16,9 +13,6 @@ class LocationList extends Component {
     this.filterLocations = this.filterLocations.bind(this);
   }
 
-  /**
-   * Filter Locations based on user query
-   */
   filterLocations(event) {
     this.props.closeInfoWindow();
     const { value } = event.target;
@@ -44,9 +38,8 @@ class LocationList extends Component {
     });
   }
 
-  /**
-   * Render function of LocationList
-   */
+   //Render function of LocationList
+   
   render() {
     var locationlist = this.state.locations.map(function(listItem, index) {
       return (
