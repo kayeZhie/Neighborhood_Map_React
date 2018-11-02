@@ -3,7 +3,7 @@ A single-page web application, built using the React framework, that displays a 
 
 # How to run the app in developer mode:
 
-    1. Download or git clone this [github repository](https://github.com/kayeZhie/Neighborhood_Map_React) 
+    1. Download or git clone this git repository https://github.com/kayeZhie/Neighborhood_Map_React
     2. Run: npm install in working directory
     3. Install Dependances
     4. Run npm start to initialize.
