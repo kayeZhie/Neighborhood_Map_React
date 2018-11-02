@@ -35,7 +35,6 @@ class App extends Component {
       center: { lat: 37.598546, lng: -122.3871942 },
       zoom: 14,
       mapTypeControl: false,
-
       //styles from https://snazzymaps.com/style/31/red-hues
       styles: [
     {
